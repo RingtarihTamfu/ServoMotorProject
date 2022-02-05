@@ -6,7 +6,19 @@
  * 
  * Instructor: William Stapleton
  * 
- * Description: 
+ * Description: This C code is the main driver code that interfaces the Raspberry Pi 4 to the Arduino Mega. 
+ *              This code takes in the character that was pressed on the 4x4 keypad connected to the Arduino Mega, and depending on the
+ *              key that was pressed, the code requests the arduino to drive the driver motor using PWM signals to run the servo 
+ *              motor and it goes as follows:
+ *              - If 1 is pressed, the PWM signal for the servo motor is increased by +1
+ *              - If 2 is pressed, the PWM signal for the servo motor is increased by +10
+ *              - If 3 is pressed, the PWM signal for the servo motor is increased by +100 
+ *              - If A is pressed, the PWM signal for the servo motor is set to 2000
+ *              - If 4 is pressed, the PWM signal for the servo motor is decreased by -1
+ *              - If 5 is pressed, the PWM signal for the servo motor is decreased by -10
+ *              - If 6 is pressed, the PWM signal for the servo motor is decreased by -100
+ *              - If B is pressed, the PWM signal for the servo motor is set to 1000
+ *              - If 0 is pressed, the PWM signal for the servo motor is set to 1500
  */
 
 //All Libraries used in this program
@@ -82,11 +94,6 @@ int main()
 		serial_send_request(serial_handle, command_string, serial_receive_buffer);
 		printf("Response ...\n");
 		printf("%s\n",serial_receive_buffer);
-	
-		//if(process_serial_response(serial_receive_buffer) < 0)
-		//{
-			//display_serial_device_error(serial_device.last_error_code);
-		//}
 		
 		//This takes the char that was being returned by the command above and you can save it 
 		//into a variable of your choice

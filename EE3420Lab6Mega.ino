@@ -6,8 +6,21 @@
  * 
  * Instructor: William Stapleton
  * 
- * 
+ * Description: This Arduino code is the main driver code that interfaces the Arduino Mega to the Raspberry Pi 4 
+ *              This code sends the character of the key that was pressed on the 4x4 keypad connected to the Raspberry Pi 4, and 
+ *              depending on the key that was pressed, the code gets instruction from the Raspberry Pi 4 to set the PWM values of the 
+ *              servo motor. The instructions goes as follows;
+ *              - If 1 is pressed, the PWM signal for the servo motor is increased by +1
+ *              - If 2 is pressed, the PWM signal for the servo motor is increased by +10
+ *              - If 3 is pressed, the PWM signal for the servo motor is increased by +100 
+ *              - If A is pressed, the PWM signal for the servo motor is set to 2000
+ *              - If 4 is pressed, the PWM signal for the servo motor is decreased by -1
+ *              - If 5 is pressed, the PWM signal for the servo motor is decreased by -10
+ *              - If 6 is pressed, the PWM signal for the servo motor is decreased by -100
+ *              - If B is pressed, the PWM signal for the servo motor is set to 1000
+ *              - If 0 is pressed, the PWM signal for the servo motor is set to 1500
  */
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //ALL LIBRARIES HERE
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
